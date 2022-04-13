@@ -1,12 +1,13 @@
 .game {
   padding: 30px 0;
-  min-height: 500px;
+  min-height: 100vh;
   background-color: black;
   position: relative;
 
   &__title {
     text-align: center;
-    color: aliceblue;
+    color: #ffe735;
+    font-size: 50px;
   }
 
   &__card-box {
@@ -14,14 +15,18 @@
     justify-content: space-evenly;
     align-items: center;
 
-    border: 2px solid aliceblue;
+    margin-top: 30px;
   }
   &__card-style {
     padding: 20px 10px;
-    background-color: aliceblue;
+    background-color: #ffe735;
     color: black;
     width: 150px;
-    height: 250px;
+    height: 230px;
+
+    font-size: 70px;
+    border: 1px solid aliceblue;
+    border-radius: 11px;
 
     display: flex;
     justify-content: center;
@@ -48,5 +53,26 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
+  }
+  &__btn-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  #rndCard {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffe735;
+    color: black;
+    box-shadow: 0 0 15px 5px $main-color;
+    &:hover {
+      filter: brightness(110%);
+    }
+    &:active {
+      filter: brightness(90%);
+    }
   }
 }
