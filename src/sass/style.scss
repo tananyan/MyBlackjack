@@ -3,9 +3,9 @@
 @import "libs/normalize";
 
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
 * {
-    font-family: 'Bungee Inline', cursive;
+    font-family: "Bungee Inline", cursive;
 }
 
 // base
@@ -15,11 +15,11 @@
 .container {
     margin: 0 auto;
     width: 1200px;
-    z-index: 1;
 }
 
 // blocks
 @import "./blocks/game";
+@import "./blocks/footer";
 
 // media
 @import "./base/media";

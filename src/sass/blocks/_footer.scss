@@ -1,0 +1,27 @@
+.footer-bg {
+  min-height: 15vh;
+  background-color: black;
+  position: relative;
+  &__img-box {
+    // position: relative;
+  }
+  &__img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+  #img1 {
+    right: 0;
+    bottom: 0;
+  }
+  #img2 {
+    left: 0;
+    bottom: 0;
+  }
+  #img3 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+}

@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "K",
   ];
 
+  // Колода
   function buildCards(suitsArr, valuesArr) {
     let cardsArr = [];
     suitsArr.forEach((itemSuit) => {
@@ -33,6 +34,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   let cards = buildCards(suits, values);
 
+  // Закрытие меню и начало игры
+  const startGame = document.querySelector("#newGame");
+  const menuGame = document.querySelector(".game__menu");
+  const boxGame = document.querySelector(".game__start");
+  startGame.addEventListener("click", () => {
+    menuGame.style.display = "none";
+    boxGame.style.display = "block";
+  });
+
+  // Игра
   const cardONE = document.querySelector("#cardOne");
   const cardTWO = document.querySelector("#cardTwo");
   const cardTop = document.querySelectorAll(".game__card-top");
@@ -56,7 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
     cardMid[num].innerHTML = cards[n].suit;
     cardBot[num].innerHTML = cards[n].value;
 
-    score.innerHTML += cards[n].value;
+    if (num == 0) {
+      score.innerHTML += cards[n].value;
+    } else {
+      score.innerHTML += "+" + cards[n].value;
+    }
   }
 
   startBtn.addEventListener("click", () => {
