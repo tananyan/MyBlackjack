@@ -61,23 +61,37 @@
 
   &__card-box {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-
-    margin-top: 30px;
+    h3 {
+      font-size: 24px;
+      color: $al;
+      margin: 5px;
+    }
   }
+  &__player-box {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(108px, auto);
+    gap: 15px;
+  }
+  &__dealer-box {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(108px, auto);
+    gap: 15px;
+  }
+
   &__card-style {
     background-color: $al;
     color: black;
-    width: 150px;
-    height: 230px;
+    width: 108px;
+    height: 180px;
     border: 1px solid $yel;
     border-radius: 11px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     position: relative;
   }
   &__card-top {
@@ -98,33 +112,41 @@
     right: 5px;
   }
 
-  &__score {
-    display: flex;
-    justify-content: center;
-    font-size: 54px;
-    line-height: 1;
-    color: $al;
-    height: 90px;
-  }
   &__btn-box {
+    margin: 0 auto;
+    padding: 13px 0;
+    width: 600px;
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    justify-content: space-between;
+    margin-top: 3px;
   }
-  #start {
-    width: 200px;
-    height: 50px;
-    font-size: 30px;
+  #HitBtn,
+  #EnoughBtn {
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 1;
     border: none;
-    border-radius: 50%;
+    border-radius: 15px;
     background-color: $yel;
     color: black;
-    box-shadow: 0 0 15px 5px $main-color;
+    transition: 0.3s all;
     &:hover {
-      filter: brightness(110%);
+      box-shadow: 0 0 5px $al, 0 0 15px $al, 0 0 15px $al;
     }
     &:active {
-      filter: brightness(90%);
+      box-shadow: 0 0 5px $main-color, 0 0 15px $main-color, 0 0 15px $main-color;
     }
+  }
+  #EnoughBtn {
+    background-color: $main-color;
+    &:active {
+      box-shadow: 0 0 5px $yel, 0 0 15px $yel, 0 0 15px $yel;
+    }
+  }
+  &__score {
+    font-size: 30px;
+    line-height: 1;
+    color: $al;
   }
 }

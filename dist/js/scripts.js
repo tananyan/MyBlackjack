@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const cardTop = document.querySelectorAll(".game__card-top");
   const cardMid = document.querySelectorAll(".game__card-mid");
   const cardBot = document.querySelectorAll(".game__card-bot");
-  const startBtn = document.querySelector("#start");
+  const startBtn = document.querySelector("#HitBtn");
+  const stopBtn = document.querySelector("#EnoughBtn");
   const score = document.querySelector(".game__score");
 
   let num = 0;
@@ -78,10 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
     getCard(num);
     num++;
   });
-  // const lang = document.querySelector(".footer__lang");
-  // lang.addEventListener("click", () => {
-  //   langSelect.style.display = "block";
-  // });
 
   //
 });
