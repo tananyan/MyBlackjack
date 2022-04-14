@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cardTop = document.querySelectorAll(".game__card-top");
   const cardMid = document.querySelectorAll(".game__card-mid");
   const cardBot = document.querySelectorAll(".game__card-bot");
+  // const cardStyles = document.querySelectorAll(".")
   // Score and buttons
   const startBtn = document.querySelector("#HitBtn");
   const stopBtn = document.querySelector("#EnoughBtn");
@@ -83,9 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let n = Number(Math.floor(Math.random() * cards.length));
     if (cards[n].suit == "♥" || cards[n].suit == "♦") {
       cardNUM[num].style.color = "#ff3300";
+      cardNUM[num].classList.add("game__card-style_active");
     } else {
-      // if (cards[n].suit == "♠" || cards[n].suit == "♣") {
-      cardNUM[num].style.color = "#000000"; //"♠", "♣", "♥", "♦"
+      cardNUM[num].style.color = "#000000";
+      cardNUM[num].classList.add("game__card-style_active");
     }
 
     cardTop[num].innerHTML = cards[n].value;

@@ -85,14 +85,19 @@
   &__card-style {
     background-color: $al;
     color: black;
+    background-color: black;
     width: 108px;
-    height: 180px;
-    border: 1px solid $yel;
+    height: 178px;
+    border: 1px solid $main-color;
     border-radius: 11px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    &_active {
+      background-color: $al;
+      border: 1px solid $yel;
+    }
   }
   &__card-top {
     font-size: 50px;
