@@ -69,13 +69,13 @@
       margin: 5px;
     }
   }
-  &__player-box {
+  &__dealer-box {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: minmax(108px, auto);
     gap: 15px;
   }
-  &__dealer-box {
+  &__player-box {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: minmax(108px, auto);
@@ -145,7 +145,7 @@
     }
   }
   &__score {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1;
     color: $al;
   }

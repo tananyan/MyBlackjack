@@ -44,24 +44,48 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Игра
+  // Player cards
   const cardONE = document.querySelector("#cardOne");
   const cardTWO = document.querySelector("#cardTwo");
+  const cardTHREE = document.querySelector("#cardThree");
+  const cardFOUR = document.querySelector("#cardFour");
+  const cardFIVE = document.querySelector("#cardFive");
+  // Dealer cards
+  const cardONEd = document.querySelector("#cardOneD");
+  const cardTWOd = document.querySelector("#cardTwoD");
+  const cardTHREEd = document.querySelector("#cardThreeD");
+  const cardFOURd = document.querySelector("#cardFourD");
+  const cardFIVEd = document.querySelector("#cardFiveD");
+  // Cards top mid bot /dealer 0-4 /player 5-9
   const cardTop = document.querySelectorAll(".game__card-top");
   const cardMid = document.querySelectorAll(".game__card-mid");
   const cardBot = document.querySelectorAll(".game__card-bot");
+  // Score and buttons
   const startBtn = document.querySelector("#HitBtn");
   const stopBtn = document.querySelector("#EnoughBtn");
   const score = document.querySelector(".game__score");
 
   let num = 0;
-  let cardNUM = [cardONE, cardTWO];
+  let cardNUM = [
+    cardONEd,
+    cardTWOd,
+    cardTHREEd,
+    cardFOURd,
+    cardFIVEd,
+    cardONE,
+    cardTWO,
+    cardTHREE,
+    cardFOUR,
+    cardFIVE,
+  ];
 
   function getCard(num) {
     let n = Number(Math.floor(Math.random() * cards.length));
     if (cards[n].suit == "♥" || cards[n].suit == "♦") {
       cardNUM[num].style.color = "#ff3300";
     } else {
-      cardNUM[num].style.color = "#000000";
+      // if (cards[n].suit == "♠" || cards[n].suit == "♣") {
+      cardNUM[num].style.color = "#000000"; //"♠", "♣", "♥", "♦"
     }
 
     cardTop[num].innerHTML = cards[n].value;
@@ -69,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cardBot[num].innerHTML = cards[n].value;
 
     if (num == 0) {
-      score.innerHTML += cards[n].value;
+      score.innerHTML = cards[n].value;
     } else {
       score.innerHTML += "+" + cards[n].value;
     }
