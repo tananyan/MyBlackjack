@@ -94,23 +94,26 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    transition: all 0.9s cubic-bezier(0.2, 0.85, 0.3, 1.275);
+    transform: rotateY(-180deg);
     &_active {
       background-color: $al;
       border: 1px solid $yel;
+      transform: rotateY(0deg);
     }
   }
   &__card-top {
-    font-size: 50px;
+    font-size: 33px;
     line-height: 1;
     position: absolute;
     top: 1px;
     left: 5px;
   }
   &__card-mid {
-    font-size: 70px;
+    font-size: 73px;
   }
   &__card-bot {
-    font-size: 50px;
+    font-size: 33px;
     line-height: 1;
     position: absolute;
     bottom: 1px;
