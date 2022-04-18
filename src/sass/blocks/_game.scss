@@ -123,17 +123,17 @@
 
   &__btn-box {
     margin: 0 auto;
-    padding: 13px 0;
     width: 600px;
+    height: 40px;
     display: flex;
     justify-content: space-between;
-    margin-top: 3px;
+    margin-top: 13px;
   }
   #HitBtn,
   #EnoughBtn,
   #StartBtn {
     width: 100px;
-    height: 30px;
+    height: 100%;
     font-size: 18px;
     line-height: 1;
     border: none;
@@ -158,9 +158,72 @@
     background-color: limegreen;
     margin-left: 15px;
   }
-  &__score {
-    font-size: 28px;
-    line-height: 1;
+  .label {
+    margin-left: 41px;
+    font-size: 20px;
+    line-height: 20px;
     color: $al;
+  }
+  &__score {
+    text-align: right;
+    font-size: 20px;
+    line-height: 20px;
+    color: $al;
+  }
+
+  #DealerS {
+    font-size: 20px;
+    line-height: 20px;
+    color: $al;
+  }
+  #PlayerS {
+    font-size: 20px;
+    line-height: 20px;
+    color: $yel;
+  }
+
+  &__over {
+    position: absolute;
+    top: 230px;
+    right: 50.1%;
+    transform: translateX(50%);
+    padding: 15px 15px;
+    width: 250px;
+    height: 200px;
+    // background-color: black;
+    background: linear-gradient(black, 90%, limegreen);
+    box-shadow: 0 0 15px black, 0 0 25px black, 0 0 35px black;
+    border-radius: 11px;
+    // border: 1px solid $yel;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__win,
+  &__loser {
+    font-size: 54px;
+    // line-height: 20px;
+    color: limegreen;
+    // display: none;
+  }
+  &__win {
+    // display: none;
+  }
+  &__loser {
+    color: $main-color;
+    display: none;
+  }
+  &__res {
+    #PlayerRes {
+      font-size: 20px;
+      line-height: 20px;
+      color: $al;
+    }
+    #DealerRes {
+      font-size: 20px;
+      line-height: 20px;
+      color: $al;
+    }
   }
 }

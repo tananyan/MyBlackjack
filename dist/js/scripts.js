@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const startBtn = document.querySelector("#HitBtn");
   const stopBtn = document.querySelector("#EnoughBtn");
   const score = document.querySelector(".game__score");
+  const winsD = document.querySelector("#DealerWins");
+  const wins = document.querySelector("#PlayerWins");
+  let counterD = 0;
+  let counter = 0;
 
   // Загрузка /
   function gameLoader() {
@@ -69,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
     startGame.addEventListener("click", () => {
       menuGame.style.display = "none";
       boxGame.style.display = "block";
-      // getCardDealer(numD);
       setTimeout(() => {
         getCardDealer(numD);
       }, 500);
@@ -92,10 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getCardDealer(numD) {
       getCard(numD);
-      if (flag === true) {
-        arrSumD.push(cardBot[0].innerHTML);
-        flag = false;
-      }
     }
 
     function getCard(num) {
@@ -181,15 +180,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (num > 6 && numD < 4) {
         while (summaCards(arrSumD, false) < 17) {
           numD++;
-          // setInterval(() => {
           getCardDealer(numD);
-          // }, 100);
-
           arrSumD.push(cardBot[numD].innerHTML);
         }
         startBtn.disabled = true;
       }
       console.log(summaCards(arrSumD, false));
+
+      
     });
 
     // del
@@ -212,7 +210,6 @@ document.addEventListener("DOMContentLoaded", function () {
         getCardDealer(numD);
         score.innerHTML = "0";
       }, 500);
-
       startBtn.disabled = false;
     }
 
