@@ -120,14 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
       cardBot[num].innerHTML = cards[n].value;
     }
 
-    // function scoreSum(n, num, flag) {
-    //   if (num == 5 && flag === true) {
-    //     score.innerHTML = cards[n].value;
-    //   } else if (flag === true) {
-    //     score.innerHTML += "+" + cards[n].value;
-    //   }
-    // }
-
     function summaCards(vals, flag) {
       let summa = 0;
       let counter = 0;
@@ -158,6 +150,16 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         if (flag == true) {
           score.innerHTML = summa;
+
+          let timer = setInterval(() => {
+            score.style.color = "#ffe735";
+            setTimeout(() => {
+              score.style.color = "aliceblue";
+            }, 250);
+          }, 500);
+          setTimeout(() => {
+            clearInterval(timer);
+          }, 2000);
         }
       }, 300);
 

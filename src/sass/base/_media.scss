@@ -4,27 +4,166 @@
 //993px-1200px
 @media (max-width: 1200px) {
   .container {
-    // width: ;
+    width: 990px;
+  }
+
+  .game {
+    padding: 10px 0;
+    height: 90vh;
+    &__title {
+      text-align: center;
+      color: $yel;
+      font-size: 30px;
+    }
+
+    // Меню
+    &__menu {
+      margin-top: 30px;
+    }
+    &__menu-h2-ruler {
+      font-size: 28px;
+    }
+    &__menu-ruler {
+      font-size: 20px;
+    }
+    &__menu-start {
+      margin-top: 20px;
+      #newGame {
+        transform: scale(0.7);
+        &:hover {
+          box-shadow: none;
+        }
+      }
+    }
+
+    // Игровая часть
+    #HitBtn,
+    #EnoughBtn,
+    #StartBtn {
+      &:hover {
+        box-shadow: none;
+      }
+    }
   }
 }
 
 //769px-992px
 @media (max-width: 992px) {
   .container {
-    // width: ;
+    width: 760px;
   }
 }
 
 //577px-768px
 @media (max-width: 768px) {
   .container {
-    // width: ;
+    width: 98vw;
+  }
+
+  .game {
+    &__dealer-box {
+      gap: 5px;
+    }
+    &__player-box {
+      gap: 5px;
+    }
+    &__card-style {
+      width: 19vw;
+      height: calc(19vw / 0.606741573);
+    }
+    &__btn-box {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: repeat(3, 40px);
+      // & > div{
+      //   text-align: center;
+      // }
+      & > div:nth-child(1) {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        text-align: center;
+      }
+      & > div:nth-child(2) {
+        grid-column: 1/2;
+        grid-row: 2/4;
+      }
+      & > div:nth-child(3) {
+        grid-column: 3/4;
+        grid-row: 2/4;
+      }
+    }
+    #HitBtn,
+    #EnoughBtn,
+    #StartBtn {
+      margin: 0;
+      width: 30vw;
+      font-size: 24px;
+    }
+    .label {
+      margin: 0;
+      font-size: 24px;
+      line-height: 24px;
+    }
+    &__score {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    #DealerS {
+      font-size: 24px;
+      line-height: 24px;
+      color: $al;
+    }
+    #PlayerS {
+      font-size: 24px;
+      line-height: 24px;
+      color: $yel;
+    }
+
+    &__over {
+      display: none;
+
+      position: absolute;
+      top: 230px;
+      right: 50.1%;
+      transform: translateX(50%);
+      padding: 15px 15px;
+      width: 250px;
+      height: 200px;
+      background: linear-gradient(black, 90%, limegreen);
+      box-shadow: 0 0 15px black, 0 0 25px black, 0 0 35px black;
+      border-radius: 11px;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__win,
+    &__loser,
+    &__draww {
+      font-size: 54px;
+    }
+
+    &__res {
+      font-size: 20px;
+      line-height: 20px;
+      color: $al;
+      #playerRes {
+        text-align: center;
+        text-shadow: 0px 5px 8px aliceblue;
+      }
+      #dealerRes {
+        text-align: center;
+        margin-top: 5px;
+        text-shadow: 0px 5px 8px aliceblue;
+      }
+    }
   }
 }
 
 //320px-576px
-@media (max-width: 576px) {
-  .container {
-    // width: ;
-  }
-}
+// @media (max-width: 576px) {
+//   .container {
+//     width: 300px;
+//   }
+// }

@@ -1,8 +1,8 @@
 .footer-bg {
-  min-height: 15vh;
+  height: 15vh;
   background-color: black;
   position: relative;
-  
+
   &__img {
     position: absolute;
     width: auto;
@@ -21,5 +21,18 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer-bg {
+    height: 10vh;
+
+    &__img {
+      position: absolute;
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
