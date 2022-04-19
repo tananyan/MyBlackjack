@@ -170,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let arrSumD = [];
     let flag = true;
 
+    // new game btn
     startBtn.addEventListener("click", () => {
       if (num < 10) {
         getCard(num, true);
@@ -178,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         summaCards(arrSum, true);
       } else {
         alert("У вас максимум карт");
+        stopEvent();
       }
 
       if (flag === true) {
@@ -191,6 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // stp
+    let timerbtn;
     function stopEvent() {
       if (num > 6 && numD < 4) {
         while (summaCards(arrSumD, false) < 17) {
@@ -200,6 +203,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         startBtn.disabled = true;
         stopBtn.disabled = true;
+        startBtn.style.filter = "blur(3px)";
+        stopBtn.style.filter = "blur(3px)";
+        timerbtn = setInterval(() => {
+          restartBtn.style.transform = "scale(1.1)";
+          setTimeout(() => {
+            restartBtn.style.transform = "scale(1)";
+          }, 100);
+        }, 200);
 
         setTimeout(() => {
           winner.style.display = "flex";
@@ -268,6 +279,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 500);
       startBtn.disabled = false;
       stopBtn.disabled = false;
+      startBtn.style.filter = "none";
+      stopBtn.style.filter = "none";
+      clearInterval(timerbtn);
     }
 
     restartBtn.addEventListener("click", () => {
