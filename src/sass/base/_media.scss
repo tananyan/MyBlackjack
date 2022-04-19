@@ -9,8 +9,8 @@
 
   .game {
     padding: 10px 0;
-    height: 90vh;
-    height: calc(var(--vh, 1vh) * 90);
+    // height: 90vh;
+    // height: calc(var(--vh, 1vh) * 90);
     &__title {
       text-align: center;
       color: $yel;
