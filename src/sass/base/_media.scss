@@ -9,8 +9,6 @@
 
   .game {
     padding: 10px 0;
-    // height: 90vh;
-    // height: calc(var(--vh, 1vh) * 90);
     &__title {
       text-align: center;
       color: $yel;
@@ -150,15 +148,3 @@
     }
   }
 }
-
-//577px-768px
-// @media (max-width: 768px) {
-
-// }
-
-//320px-576px
-// @media (max-width: 576px) {
-//   .container {
-//     width: 300px;
-//   }
-// }

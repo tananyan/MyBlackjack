@@ -1,39 +1,17 @@
 .footer-bg {
-  height: 15vh;
   background-color: black;
-  position: relative;
-
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  &__img-box {
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+  }
   &__img {
-    position: absolute;
-    width: auto;
     height: 100%;
+    width: 100%;
     object-fit: cover;
-  }
-  #img1 {
-    right: 0;
-    bottom: 0;
-  }
-  #img2 {
-    left: 0;
-    bottom: 0;
-  }
-  #img3 {
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-  }
-}
-
-@media (max-width: 1200px) {
-  .footer-bg {
-    height: 10vh;
-    height: calc(var(--vh, 1vh) * 10);
-
-    &__img {
-      position: absolute;
-      width: auto;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 }
