@@ -46,10 +46,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const startBtn = document.querySelector("#HitBtn");
   const stopBtn = document.querySelector("#EnoughBtn");
   const score = document.querySelector(".game__score");
+  // Общий счетчик побед
+  const winner = document.querySelector(".game__over");
+  const win = document.querySelector(".game__win");
+  const lose = document.querySelector(".game__loser");
+  const draww = document.querySelector(".game__draww");
   const winsD = document.querySelector("#DealerWins");
   const wins = document.querySelector("#PlayerWins");
   let counterD = 0;
   let counter = 0;
+  // Очки раунда
+  const playerS = document.querySelector("#PlayerScore");
+  const dealerS = document.querySelector("#DealerScore");
 
   // Загрузка /
   function gameLoader() {
@@ -174,9 +182,14 @@ document.addEventListener("DOMContentLoaded", function () {
         arrSumD.push(cardBot[0].innerHTML);
         flag = false;
       }
+
+      if (summaCards(arrSum) >= 21) {
+        stopEvent();
+      }
     });
 
-    stopBtn.addEventListener("click", () => {
+    // stp
+    function stopEvent() {
       if (num > 6 && numD < 4) {
         while (summaCards(arrSumD, false) < 17) {
           numD++;
@@ -184,14 +197,55 @@ document.addEventListener("DOMContentLoaded", function () {
           arrSumD.push(cardBot[numD].innerHTML);
         }
         startBtn.disabled = true;
-      }
-      console.log(summaCards(arrSumD, false));
+        stopBtn.disabled = true;
 
-      
+        setTimeout(() => {
+          winner.style.display = "flex";
+        }, 500);
+
+        let sumD = summaCards(arrSumD);
+        let sum = summaCards(arrSum);
+
+        if (sum < 22 && sumD > 21) {
+          win.style.display = "block";
+          winner.style.background = "linear-gradient(black, 90%, limegreen)";
+          counter++;
+        } else if (sum > sumD && sum < 22) {
+          win.style.display = "block";
+          winner.style.background = "linear-gradient(black, 90%, limegreen)";
+          counter++;
+        } else if (sum == sumD) {
+          draww.style.display = "block";
+          winner.style.background = "linear-gradient(black, 90%, #ffe735)";
+          counter++;
+          counterD++;
+        } else {
+          lose.style.display = "block";
+          winner.style.background = "linear-gradient(black, 90%, #ff3300)";
+          counterD++;
+        }
+
+        playerS.innerHTML = sum;
+        dealerS.innerHTML = sumD;
+
+        setTimeout(() => {
+          wins.innerHTML = counter;
+          winsD.innerHTML = counterD;
+        }, 300);
+      }
+    }
+    stopBtn.addEventListener("click", () => {
+      stopEvent();
     });
 
     // del
     function delCards() {
+      winner.style.display = "none";
+
+      win.style.display = "none";
+      lose.style.display = "none";
+      draww.style.display = "none";
+
       cardNUM.forEach((element, index) => {
         element.classList.remove("game__card-style_active");
         element.style.color = "transparent";
@@ -211,6 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
         score.innerHTML = "0";
       }, 500);
       startBtn.disabled = false;
+      stopBtn.disabled = false;
     }
 
     restartBtn.addEventListener("click", () => {
