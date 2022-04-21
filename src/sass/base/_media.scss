@@ -109,15 +109,22 @@
 
     .label {
       margin: 0;
+      text-align: right;
     }
 
     #DealerS {
       transform: skewY(-8deg);
       grid-row: 2/3;
+      span {
+        display: block;
+      }
     }
     #PlayerS {
       transform: skewY(-8deg);
       grid-row: 4/5;
+      span {
+        display: block;
+      }
     }
 
     &__over {
